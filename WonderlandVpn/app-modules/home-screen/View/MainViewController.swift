@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(UIView(frame: CGRect(x: 10, y: 10, width: 10, height: 10)))
         // Do any additional setup after loading the view.
     }
 
