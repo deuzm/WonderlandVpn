@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 class TabBarRouter: PresenterToRouterProtocol {
     
-    static func createTabBarModule(with presenter: TabBarPresenter) {
-        print("haha")
+    var view: ViewToPresenterProtocol?
+    
+    required init(viewController: UIViewController) {
+        view = viewController as? ViewToPresenterProtocol
     }
     
     func showMainScene() {

@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+
+protocol TabBarConfiguratorProtocol {
+    func configure(with controller: TabBarController)
+}
 
 //View -> Presenter
 protocol ViewToPresenterProtocol {
@@ -37,7 +42,6 @@ protocol InteractorToPresenterProtocol {
 // Presenter -> Router
 protocol PresenterToRouterProtocol {
     
-    static func createTabBarModule(with presenter: TabBarPresenter)
     func showMainScene()
     func showCountriesScene()
     

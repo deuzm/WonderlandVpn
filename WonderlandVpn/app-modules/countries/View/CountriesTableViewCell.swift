@@ -11,9 +11,44 @@ class CountriesTableViewCell: UITableViewCell {
     
     static let identifier = "CountriesCell"
     
+    
+    lazy var flagImage: UIImageView = {
+        let image = UIImage(named: "001-paraguay.png")
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 20, y: self.bounds.height/2 - 10, width: 25, height: 25)
+        return imageView
+    }()
+    
+    lazy var countryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Butoma hui"
+        label.textColor = UIColor.white
+        label.font = .systemFont(ofSize: 14)
+        label.frame = CGRect(x: 20, y: 10, width: self.bounds.width - 100, height: 20)
+        return label
+    }()
+    
+    lazy var innerBox: UIView = {
+        let view = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: self.bounds.width - 40, height: self.bounds.height - 15))
+        view.backgroundColor = UIColor.Custom.DarkGrey
+        view.layer.cornerRadius = 24
+//        view.layer.borderWidth = 1
+        view.backgroundColor = UIColor.Custom.DarkGrey
+        view.addSubview(countryLabel)
+        view.addSubview(flagImage)
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = UIColor.red
+        
+        contentView.backgroundColor = UIColor.Custom.Black
+        
+        self.addSubview(imageView!)
+    
+        self.addSubview(innerBox)
+        
+        layoutSubviews()
         
     }
     
@@ -30,6 +65,16 @@ class CountriesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        var labelY = 7.5
+        innerBox.frame = CGRect(x: 15, y: 6, width: self.bounds.width - 30, height: self.bounds.height - 12)
+        imageView?.frame = CGRect(x: innerBox.bounds.minX + 10, y: 5, width: 10, height: 10)
+        var labelX = 20.0 + (imageView?.bounds.width ?? 0) + 30.0;
+        countryLabel.frame = CGRect(x: labelX, y: 13, width: 100, height: 20)
     }
 
 }

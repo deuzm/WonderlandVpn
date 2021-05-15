@@ -15,6 +15,10 @@ class TabBarPresenter: PresenterToViewProtocol {
     
     var router: PresenterToRouterProtocol?
     
+    required init(view: ViewToPresenterProtocol) {
+            self.view = view
+    }
+    
     func mainSceneButtonTapped() {
         router?.showMainScene()
     }
@@ -24,7 +28,7 @@ class TabBarPresenter: PresenterToViewProtocol {
     }
     
     func setUpModule() {
-        TabBarRouter.createTabBarModule(with: self)
+//        TabBarRouter.createTabBarModule(with: self)
     }
     
 }
@@ -32,7 +36,7 @@ class TabBarPresenter: PresenterToViewProtocol {
 extension TabBarPresenter {
     
     func configureView() {
-        TabBarRouter.createTabBarModule(with: self)
+//        TabBarRouter.createTabBarModule(with: self)
     }
     
 }

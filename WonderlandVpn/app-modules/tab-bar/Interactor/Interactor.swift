@@ -7,6 +7,12 @@
 
 import Foundation
 
-class TabBarInteractor {
+class TabBarInteractor: PresenterToInteractorProtocol {
+    
+    var presenter: PresenterToViewProtocol?
+        
+    required init(presenter: PresenterToViewProtocol) {
+        self.presenter = presenter
+    }
     
 }

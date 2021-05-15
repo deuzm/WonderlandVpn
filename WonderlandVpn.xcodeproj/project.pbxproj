@@ -30,6 +30,10 @@
 		1DEDCAE0264E8D2400E0B802 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCADF264E8D2400E0B802 /* TabBarController.swift */; };
 		1DEDCAE5264E8D5700E0B802 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAE4264E8D5700E0B802 /* CountriesTableViewController.swift */; };
 		1DEDCAEB264EAF3A00E0B802 /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAEA264EAF3A00E0B802 /* CountriesTableViewCell.swift */; };
+		1DEDCAEF264FC79F00E0B802 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */; };
+		1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */; };
+		1DEDCAF8264FE03C00E0B802 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */; };
+		1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		1DEDCADF264E8D2400E0B802 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1DEDCAE4264E8D5700E0B802 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		1DEDCAEA264EAF3A00E0B802 /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
+		1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
+		1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 				1DEDCADA264E81E000E0B802 /* app-ui */,
 				1DEDCADB264E820A00E0B802 /* app-icons */,
 				1DEDCA6E264E7D3700E0B802 /* Info.plist */,
+				1DEDCAF4264FCCCE00E0B802 /* app-utilities */,
 			);
 			path = WonderlandVpn;
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCADF264E8D2400E0B802 /* TabBarController.swift */,
+				1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCAC3264E80BB00E0B802 /* Router.swift */,
+				1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -316,6 +327,15 @@
 				1DEDCA69264E7D3700E0B802 /* Assets.xcassets */,
 			);
 			path = "app-icons";
+			sourceTree = "<group>";
+		};
+		1DEDCAF4264FCCCE00E0B802 /* app-utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */,
+				1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */,
+			);
+			path = "app-utilities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,9 +408,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DEDCABE264E809D00E0B802 /* TabBarPresenter.swift in Sources */,
+				1DEDCAF8264FE03C00E0B802 /* NavigationController.swift in Sources */,
 				1DEDCAB4264E808900E0B802 /* Protocols.swift in Sources */,
+				1DEDCAEF264FC79F00E0B802 /* TabBarConfigurator.swift in Sources */,
 				1DEDCA9C264E803300E0B802 /* CountriesRouter.swift in Sources */,
+				1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */,
 				1DEDCA82264E7E6600E0B802 /* MainRouter.swift in Sources */,
+				1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */,
 				1DEDCA65264E7D3300E0B802 /* MainViewController.swift in Sources */,
 				1DEDCAB8264E808F00E0B802 /* Entity.swift in Sources */,
 				1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */,
