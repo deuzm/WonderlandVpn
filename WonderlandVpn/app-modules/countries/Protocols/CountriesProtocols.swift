@@ -7,8 +7,14 @@
 
 import Foundation
 
+//Countries configurator
+protocol CountriesConfiguratorProtocol {
+    func configure(with controller: CountriesTableViewController)
+}
+
 //View -> Presenter
 protocol ViewToPresenterCountriesProtocol {
+    func updateData(data: [Countries])
     func setUpViews()
 }
 
@@ -19,22 +25,24 @@ protocol PresenterToViewCountriesProtocol {
     var interactor: PresenterToInteractorCountriesProtocol? { get set }
     var router: PresenterToRouterCountriesProtocol? { get set }
     
-    func setUpModule()
+    func startFetchingCountries()
 }
 
 // Presenter -> Interactor
 protocol PresenterToInteractorCountriesProtocol {
-    
+    var presenter: InteractorToPresenterCountriesProtocol? { get set }
+    func getCountries()
 }
 
 // Interactor -> Presenter
 protocol InteractorToPresenterCountriesProtocol {
-    
+     func fetchSucceed(with data: [Countries])
+     func fetchFailed()
 }
 
 // Presenter -> Router
 protocol PresenterToRouterCountriesProtocol {
-    
+    var view: CountriesTableViewController? { get set }
     static func createTabBarModule(with presenter: TabBarPresenter)
     func returnToMainScene()
     

@@ -34,6 +34,11 @@
 		1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */; };
 		1DEDCAF8264FE03C00E0B802 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */; };
 		1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */; };
+		1DEDCAFF2651356B00E0B802 /* Country.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */; };
+		1DEDCB032651372800E0B802 /* CountryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB012651372800E0B802 /* CountryEntity+CoreDataClass.swift */; };
+		1DEDCB042651372800E0B802 /* CountryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */; };
+		1DEDCB0A26513EFC00E0B802 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0926513EFC00E0B802 /* DataManager.swift */; };
+		1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +71,11 @@
 		1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
+		1DEDCAFE2651356B00E0B802 /* Country.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Country.xcdatamodel; sourceTree = "<group>"; };
+		1DEDCB012651372800E0B802 /* CountryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1DEDCB0926513EFC00E0B802 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +108,16 @@
 		1DEDCA5F264E7D3300E0B802 /* WonderlandVpn */ = {
 			isa = PBXGroup;
 			children = (
+				1DEDCB012651372800E0B802 /* CountryEntity+CoreDataClass.swift */,
+				1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */,
 				1DEDCA84264E7E7100E0B802 /* app-modules */,
 				1DEDCAD6264E81B300E0B802 /* app-settings */,
 				1DEDCADA264E81E000E0B802 /* app-ui */,
 				1DEDCADB264E820A00E0B802 /* app-icons */,
 				1DEDCA6E264E7D3700E0B802 /* Info.plist */,
 				1DEDCAF4264FCCCE00E0B802 /* app-utilities */,
+				1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */,
+				1DEDCB0926513EFC00E0B802 /* DataManager.swift */,
 			);
 			path = WonderlandVpn;
 			sourceTree = "<group>";
@@ -225,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCA9B264E803300E0B802 /* CountriesRouter.swift */,
+				1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -407,15 +422,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEDCB0A26513EFC00E0B802 /* DataManager.swift in Sources */,
 				1DEDCABE264E809D00E0B802 /* TabBarPresenter.swift in Sources */,
 				1DEDCAF8264FE03C00E0B802 /* NavigationController.swift in Sources */,
 				1DEDCAB4264E808900E0B802 /* Protocols.swift in Sources */,
 				1DEDCAEF264FC79F00E0B802 /* TabBarConfigurator.swift in Sources */,
 				1DEDCA9C264E803300E0B802 /* CountriesRouter.swift in Sources */,
 				1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */,
+				1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */,
 				1DEDCA82264E7E6600E0B802 /* MainRouter.swift in Sources */,
 				1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */,
 				1DEDCA65264E7D3300E0B802 /* MainViewController.swift in Sources */,
+				1DEDCB042651372800E0B802 /* CountryEntity+CoreDataProperties.swift in Sources */,
 				1DEDCAB8264E808F00E0B802 /* Entity.swift in Sources */,
 				1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */,
 				1DEDCA61264E7D3300E0B802 /* AppDelegate.swift in Sources */,
@@ -425,8 +443,10 @@
 				1DEDCA7C264E7E4500E0B802 /* MainView.swift in Sources */,
 				1DEDCAC4264E80BB00E0B802 /* Router.swift in Sources */,
 				1DEDCA9F264E804400E0B802 /* CountriesEntity.swift in Sources */,
+				1DEDCB032651372800E0B802 /* CountryEntity+CoreDataClass.swift in Sources */,
 				1DEDCA76264E7E2D00E0B802 /* MainInteractor.swift in Sources */,
 				1DEDCABB264E809500E0B802 /* Interactor.swift in Sources */,
+				1DEDCAFF2651356B00E0B802 /* Country.xcdatamodeld in Sources */,
 				1DEDCAA2264E804C00E0B802 /* CountriesPresenter.swift in Sources */,
 				1DEDCA63264E7D3300E0B802 /* SceneDelegate.swift in Sources */,
 				1DEDCAE0264E8D2400E0B802 /* TabBarController.swift in Sources */,
@@ -625,6 +645,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1DEDCAFE2651356B00E0B802 /* Country.xcdatamodel */,
+			);
+			currentVersion = 1DEDCAFE2651356B00E0B802 /* Country.xcdatamodel */;
+			path = Country.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1DEDCA55264E7D3300E0B802 /* Project object */;
 }

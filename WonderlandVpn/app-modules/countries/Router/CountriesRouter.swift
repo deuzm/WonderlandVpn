@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+class CountriesRouter: PresenterToRouterCountriesProtocol {
+    var view: CountriesTableViewController?
+    
+    static func createTabBarModule(with presenter: TabBarPresenter) {
+        
+    }
+    func returnToMainScene() {
+        
+    }
+    
+    required init(viewController: CountriesTableViewController) {
+        view = viewController
+    }
+    
+}

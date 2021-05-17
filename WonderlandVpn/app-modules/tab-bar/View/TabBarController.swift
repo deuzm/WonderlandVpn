@@ -42,7 +42,7 @@ extension TabBarController: ViewToPresenterProtocol {
         viewControllers = [mainVC, navVC]
         
         tabBar.items?[0].title = "Home"
-        tabBar.items?[0].image = UIImage(systemName: "heart.fill")
+        tabBar.items?[0].image = UIImage(systemName: "house.fill")
         tabBar.items?[1].title = "Countries"
         tabBar.items?[1].image = UIImage(systemName: "location")
         

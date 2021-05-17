@@ -11,9 +11,14 @@ class CountriesTableViewCell: UITableViewCell {
     
     static let identifier = "CountriesCell"
     
+    var imageString: String = " " {
+        didSet {
+            flagImage.image = UIImage(named: imageString)
+        }
+    }
     
     lazy var flagImage: UIImageView = {
-        let image = UIImage(named: "001-paraguay.png")
+        let image = UIImage(named: imageString)
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 20, y: self.bounds.height/2 - 10, width: 25, height: 25)
         return imageView
@@ -70,10 +75,10 @@ class CountriesTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var labelY = 7.5
+        let labelY = 7.5
         innerBox.frame = CGRect(x: 15, y: 6, width: self.bounds.width - 30, height: self.bounds.height - 12)
         imageView?.frame = CGRect(x: innerBox.bounds.minX + 10, y: 5, width: 10, height: 10)
-        var labelX = 20.0 + (imageView?.bounds.width ?? 0) + 30.0;
+        let labelX = 20.0 + (imageView?.bounds.width ?? 0) + 30.0;
         countryLabel.frame = CGRect(x: labelX, y: 13, width: 100, height: 20)
     }
 
