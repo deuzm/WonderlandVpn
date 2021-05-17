@@ -124,7 +124,7 @@ class DataManager: DataManagerProtocol {
             let countriesArray = countryNames.components(separatedBy: "\n")
             
             for (name, country) in zip(namesArray, countriesArray) {
-                if loadedCountries.contains(where: { obj in obj.name == name }) {
+                if !loadedCountries.contains(where: { obj in obj.name == name }) {
                     addCountry(countryName: country, imageName: name)
                 }
             }

@@ -47,6 +47,7 @@ class MyFileManager {
                 print(error)
             }
         } catch {
+            return Country(with: "Belarus", imageName: "152-belarus.png", id: UUID())
             print(error)
         }
         return country
