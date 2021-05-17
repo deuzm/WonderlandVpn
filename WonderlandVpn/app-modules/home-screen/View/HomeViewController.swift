@@ -12,24 +12,38 @@ class HomeViewController: UIViewController {
     var currentCountry: Country?
     var presenter: HomePresenterToViewProtocol?
     var configurator: HomeConfiguratorProtocol!
+    var pulsatingLayer: CAShapeLayer!
+    var animation: CABasicAnimation!
+    var isAnimationRunning: Bool?
+    var pulsingView: LayerContainerView!
+    
+    var stateString: String = "Connect" {
+        didSet {
+            connectionButton.setTitle(stateString, for: .normal)
+        }
+    }
     
     lazy var connectionButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         button.layer.cornerRadius = 100
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor.Custom.VioletBackground
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("FUCK BUTOMA", for: UIButton.State.normal)
+        button.setTitle(stateString, for: UIButton.State.normal)
+        button.addTarget(self, action: #selector(connectionButtonPressed), for: .touchUpInside)
         return button
     }()
+    
+    @objc func connectionButtonPressed() {
+        presenter?.startConnectingToVPN()
+    }
     
     lazy var countryLabel: UILabel = {
         let label = UILabel()
         label.text = "Bangladesh"
-        label.textColor = UIColor.white
-        label.font = .systemFont(ofSize: 20)
-        
+        label.textColor = UIColor.Custom.FadedWhite
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.frame = CGRect(x: 20, y: 10, width: self.view.bounds.width - 100, height: 20)
+        label.numberOfLines = 3
         return label
     }()
     
@@ -48,42 +62,81 @@ class HomeViewController: UIViewController {
     }()
     
     lazy var titleView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 200))
         view.addSubview(flagImage)
         view.addSubview(countryLabel)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-        
+    
+    func setUpNontificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc private func handleEnterForeground() {
+        presenter?.refreshState()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator = HomeConfigurator()
         configurator.configure(with: self)
-        setUpViews()
-        // Do any additional setup after loading the view.
         
+        setUpNontificationObservers()
+        setUpPulsatingLayer()
+        setUpViews()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        presenter?.refreshState()
         presenter?.startFetchingCurrentCountry()
     }
     
+    func setUpPulsatingLayer() {
+        pulsingView = LayerContainerView()
+        
+        pulsingView.backgroundColor = UIColor.red
+        var layer = pulsingView.layer as! CAShapeLayer
+        let circularPath = UIBezierPath(arcCenter: pulsingView.center, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        layer.path = circularPath.cgPath
+        layer.fillColor = UIColor.Custom.VioletGlowColor.cgColor
+        layer.lineCap = CAShapeLayerLineCap(rawValue: "round")
+        layer.position = view.center
+        view.addSubview(pulsingView)
+    }
+    
+    
+    func setPulsatingAnimation() {
+        animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.toValue = 1.15
+        animation.duration = 0.5
+        animation.autoreverses = true
+        animation.repeatCount = Float.infinity
+        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        pulsingView.layer.add(self.animation!, forKey: "pulsing")
+//        pulsatingLayer.add(self.animation!, forKey: "pulsing")
+    }
+    
     func layoutSubviews() {
+
+        connectionButton.layer.position = view.center
+        titleView.layer.position = view.center
+       
         NSLayoutConstraint.activate([
           //2
-          connectionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            connectionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+          connectionButton.centerXAnchor.constraint(equalTo: pulsingView.centerXAnchor),
+            connectionButton.centerYAnchor.constraint(equalTo: pulsingView.centerYAnchor),
           //3
             connectionButton.widthAnchor.constraint(equalToConstant: 200),
             connectionButton.heightAnchor.constraint(equalToConstant: 200)
         ])
         NSLayoutConstraint.activate([
           //2
-            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleView.bottomAnchor.constraint(equalTo: connectionButton.topAnchor),
+            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10),
+            titleView.bottomAnchor.constraint(equalTo: connectionButton.topAnchor, constant: -20),
           //3
-            titleView.widthAnchor.constraint(equalToConstant: 150),
+            titleView.widthAnchor.constraint(equalToConstant: 100),
             titleView.heightAnchor.constraint(equalToConstant: 50)
         ])
         
@@ -93,8 +146,8 @@ class HomeViewController: UIViewController {
           //3
             
             countryLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
-            countryLabel.widthAnchor.constraint(equalToConstant: 200),
-            countryLabel.heightAnchor.constraint(equalToConstant: 20),
+            countryLabel.widthAnchor.constraint(equalToConstant: 150),
+            countryLabel.heightAnchor.constraint(equalToConstant: 60),
 //            countryLabel.bottomAnchor.constraint(equalTo: connectionButton.topAnchor, constant: -20)
             
         ])
@@ -113,6 +166,7 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewToPresenterProtocol {
+    
     func setUpViews() {
         view.backgroundColor = UIColor.Custom.Black
         view.addSubview(connectionButton)
@@ -125,5 +179,47 @@ extension HomeViewController: HomeViewToPresenterProtocol {
         imageName = data.image
         countryLabel.text = data.name
     }
+    
+    func startPulsingAnimation() {
+        if isAnimationRunning == false {
+            isAnimationRunning = true
+        }
+        setPulsatingAnimation()
+        stateString =  "Connecting..."
+    }
+    
+    func stopPulsingAnimation() {
+        if isAnimationRunning == true {
+            isAnimationRunning = false
+        }
+        pulsingView.layer.removeAllAnimations()
+//        pulsatingLayer.removeAllAnimations()
+        stateString = "Completed!"
+    }
+    
+    func resetAnimation() {
+        isAnimationRunning = false
+        stateString = "Connect"
+        pulsingView.layer.removeAllAnimations()
+//        pulsatingLayer.removeAllAnimations()
+    }
 }
 
+
+class LayerContainerView: UIView {
+
+    override public class var layerClass: Swift.AnyClass {
+        return CAShapeLayer.self
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        guard let shapeLayer = self.layer as? CAShapeLayer else { return }
+        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.green.cgColor
+        shapeLayer.fillColor = UIColor.green.cgColor
+        shapeLayer.lineCap = CAShapeLayerLineCap(rawValue: "round")
+    }
+}

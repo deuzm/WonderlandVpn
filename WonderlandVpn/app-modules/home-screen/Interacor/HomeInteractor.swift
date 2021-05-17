@@ -13,10 +13,24 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     
     var presenter: HomeInteractorToPresenterProtocol?
     
+    var isAnimationRunning: Bool = false
+    var state: String = "inactive"
+    
     func fetchCurrentCountry() {
         currentCountry = MyFileManager().readCurrentCountry()
         if(currentCountry != nil) {
             presenter?.fetchSucceed(with: currentCountry!)
+        }
+    }
+    
+    func connectToVPN() {
+        if state == "connecting" {
+            return
+        }
+        state = "connecting"
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
+            self.state = "connected"
+            self.presenter?.connectionCompleted()
         }
     }
     

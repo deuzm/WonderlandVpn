@@ -124,8 +124,7 @@
 		1DEDCA84264E7E7100E0B802 /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCB0926513EFC00E0B802 /* DataManager.swift */,
-				1DEDCB13265287C300E0B802 /* MyFileManager.swift */,
+				1DEDCB2826529E5B00E0B802 /* Services */,
 				1DEDCAAC264E807100E0B802 /* Entity */,
 				1DEDCA86264E7E8E00E0B802 /* home-screen */,
 				1DEDCA8B264E7ED200E0B802 /* tab-bar */,
@@ -359,6 +358,15 @@
 				1DEDCB212652955E00E0B802 /* HomeConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		1DEDCB2826529E5B00E0B802 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCB0926513EFC00E0B802 /* DataManager.swift */,
+				1DEDCB13265287C300E0B802 /* MyFileManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

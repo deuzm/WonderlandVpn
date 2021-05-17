@@ -83,7 +83,7 @@ class CountriesTableViewCell: UITableViewCell {
         innerBox.frame = CGRect(x: 15, y: 6, width: self.bounds.width - 30, height: self.bounds.height - 12)
         imageView?.frame = CGRect(x: innerBox.bounds.minX + 10, y: 5, width: 10, height: 10)
         let labelX = 20.0 + (imageView?.bounds.width ?? 0) + 30.0;
-        countryLabel.frame = CGRect(x: labelX, y: 13, width: 100, height: 20)
+        countryLabel.frame = CGRect(x: labelX, y: 13, width: 200, height: 20)
     }
 
 }

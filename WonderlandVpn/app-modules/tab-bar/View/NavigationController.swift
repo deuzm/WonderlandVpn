@@ -16,13 +16,13 @@ class NavigationController: UINavigationController {
         label.font = .systemFont(ofSize: 20)
         label.frame = CGRect(x: 20,
                              y: 20,
-                             width: 100,
+                             width: 300,
                              height: 20)
         return label
     }()
     
     lazy var headerBox: UIView = {
-        let view = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60))
+        let view = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: 300, height: 60))
         view.backgroundColor = UIColor.Custom.Black
         var countries = coutriesLabel
         view.addSubview(countries)

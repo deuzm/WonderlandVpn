@@ -15,12 +15,26 @@ class HomePresenter: HomePresenterToViewProtocol {
     
     var router: HomePresenterToRouterProtocol?
     
-    func vpnButtonTapped() {
-        print("Tapped")
+    func startConnectingToVPN() {
+        view?.startPulsingAnimation()
+        interactor?.connectToVPN()
     }
     
     func viewWillAppear() {
 //        view?.setCountryUI(with: (interactor?.currentCountry)!)
+    }
+    
+    func refreshState() {
+        var state = interactor?.state
+        if(state == "inactive") {
+            view?.resetAnimation()
+        }
+        else if (state == "connecting") {
+            view?.startPulsingAnimation()
+        }
+        else if (state == "connected"){
+            view?.stopPulsingAnimation()
+        }
     }
     
     func startFetchingCurrentCountry() {
@@ -39,5 +53,9 @@ extension HomePresenter: HomeInteractorToPresenterProtocol {
     
     func fetchFailed() {
         
+    }
+    
+    func connectionCompleted() {
+        view?.stopPulsingAnimation()
     }
 }

@@ -17,6 +17,9 @@ protocol HomeConfiguratorProtocol {
 protocol HomeViewToPresenterProtocol {
     func setUpViews()
     func setCountryUI(with data: Country)
+    func startPulsingAnimation()
+    func stopPulsingAnimation()
+    func resetAnimation()
 }
 
 // Presenter -> View
@@ -27,20 +30,24 @@ protocol HomePresenterToViewProtocol {
     var router: HomePresenterToRouterProtocol? { get set }
     func startFetchingCurrentCountry()
     func viewWillAppear()
-    func vpnButtonTapped()
+    func startConnectingToVPN()
+    func refreshState()
 }
 
 // Presenter -> Interactor
 protocol HomePresenterToInteractorProtocol {
+    var state: String { get set }
     var currentCountry: Country? { get set }
     var presenter: HomeInteractorToPresenterProtocol? { get set }
     func fetchCurrentCountry()
+    func connectToVPN()
 }
 
 // Interactor -> Presenter
 protocol HomeInteractorToPresenterProtocol {
     func fetchSucceed(with data: Country)
     func fetchFailed()
+    func connectionCompleted()
 }
 
 // Presenter -> Router

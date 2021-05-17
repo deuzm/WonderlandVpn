@@ -17,7 +17,9 @@ class CountriesRouter: PresenterToRouterCountriesProtocol {
     func returnToMainScene(with country: Country) {
         let parentView = view?.tabBarController as! TabBarController
         parentView.mainVC.currentCountry = country
+        parentView.mainVC.stateString = "Connect"
         parentView.selectedIndex = 0
+        
     }
     
     required init(viewController: CountriesTableViewController) {
