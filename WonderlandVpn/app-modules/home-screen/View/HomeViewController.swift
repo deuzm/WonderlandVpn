@@ -7,9 +7,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     var currentCountry: Country?
+    var presenter: HomePresenterToViewProtocol?
+    var configurator: HomeConfiguratorProtocol!
     
     lazy var connectionButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
@@ -55,21 +57,16 @@ class MainViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.Custom.Black
-        view.addSubview(connectionButton)
-        view.addSubview(titleView)
-        layoutSubviews()
-        view.addSubview(UIView(frame: CGRect(x: 10, y: 10, width: 10, height: 10)))
+        configurator = HomeConfigurator()
+        configurator.configure(with: self)
+        setUpViews()
         // Do any additional setup after loading the view.
         
-        currentCountry = MyFileManager().readCurrentCountry()
-        imageName = currentCountry!.image
-        countryLabel.text = currentCountry?.name ?? ""
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        imageName = currentCountry!.image
-        countryLabel.text = currentCountry?.name ?? ""
+        presenter?.startFetchingCurrentCountry()
     }
     
     func layoutSubviews() {
@@ -112,6 +109,21 @@ class MainViewController: UIViewController {
             
         ])
  
+    }
+}
+
+extension HomeViewController: HomeViewToPresenterProtocol {
+    func setUpViews() {
+        view.backgroundColor = UIColor.Custom.Black
+        view.addSubview(connectionButton)
+        view.addSubview(titleView)
+        layoutSubviews()
+        view.addSubview(UIView(frame: CGRect(x: 10, y: 10, width: 10, height: 10)))
+    }
+    
+    func setCountryUI(with data: Country) {
+        imageName = data.image
+        countryLabel.text = data.name
     }
 }
 

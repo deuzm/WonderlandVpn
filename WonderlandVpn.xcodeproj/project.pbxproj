@@ -14,7 +14,6 @@
 		1DEDCA6D264E7D3700E0B802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCA6B264E7D3700E0B802 /* LaunchScreen.storyboard */; };
 		1DEDCA76264E7E2D00E0B802 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */; };
 		1DEDCA79264E7E3600E0B802 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */; };
-		1DEDCA7C264E7E4500E0B802 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA7B264E7E4500E0B802 /* HomeView.swift */; };
 		1DEDCA82264E7E6600E0B802 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */; };
 		1DEDCA96264E802300E0B802 /* CountriesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA95264E802300E0B802 /* CountriesProtocols.swift */; };
 		1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA98264E802C00E0B802 /* CountriesInteractor.swift */; };
@@ -39,6 +38,7 @@
 		1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */; };
 		1DEDCB14265287C300E0B802 /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB13265287C300E0B802 /* MyFileManager.swift */; };
 		1DEDCB1C26528FF100E0B802 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */; };
+		1DEDCB222652955E00E0B802 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB212652955E00E0B802 /* HomeConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,6 @@
 		1DEDCA6E264E7D3700E0B802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		1DEDCA7B264E7E4500E0B802 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		1DEDCA95264E802300E0B802 /* CountriesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesProtocols.swift; sourceTree = "<group>"; };
 		1DEDCA98264E802C00E0B802 /* CountriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInteractor.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesConfigurator.swift; sourceTree = "<group>"; };
 		1DEDCB13265287C300E0B802 /* MyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
 		1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		1DEDCB212652955E00E0B802 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCA93264E7F5E00E0B802 /* Protocols */,
+				1DEDCB242652956400E0B802 /* Configurator */,
 				1DEDCA92264E7F5700E0B802 /* Interacor */,
 				1DEDCA8F264E7F0200E0B802 /* Router */,
 				1DEDCA8D264E7EEB00E0B802 /* View */,
@@ -184,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCA64264E7D3300E0B802 /* HomeViewController.swift */,
-				1DEDCA7B264E7E4500E0B802 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +353,14 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		1DEDCB242652956400E0B802 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCB212652955E00E0B802 /* HomeConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,8 +448,8 @@
 				1DEDCAEB264EAF3A00E0B802 /* CountriesTableViewCell.swift in Sources */,
 				1DEDCB1C26528FF100E0B802 /* HomeProtocols.swift in Sources */,
 				1DEDCA96264E802300E0B802 /* CountriesProtocols.swift in Sources */,
-				1DEDCA7C264E7E4500E0B802 /* HomeView.swift in Sources */,
 				1DEDCAC4264E80BB00E0B802 /* Router.swift in Sources */,
+				1DEDCB222652955E00E0B802 /* HomeConfigurator.swift in Sources */,
 				1DEDCA9F264E804400E0B802 /* CountriesEntity.swift in Sources */,
 				1DEDCB032651372800E0B802 /* CountryEntity+CoreDataClass.swift in Sources */,
 				1DEDCA76264E7E2D00E0B802 /* HomeInteractor.swift in Sources */,

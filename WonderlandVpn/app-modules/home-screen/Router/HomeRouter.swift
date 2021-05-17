@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class HomeRouter: HomePresenterToRouterProtocol {
+    var view: HomeViewController?
+    
+    required init(viewController: HomeViewController) {
+        view = viewController
+    }
+}

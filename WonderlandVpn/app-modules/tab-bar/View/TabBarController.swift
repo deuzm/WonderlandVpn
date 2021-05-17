@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-    let mainVC = MainViewController()
+    let mainVC = HomeViewController()
     let countriesVC = CountriesTableViewController()
     let navVC = NavigationController(rootViewController: CountriesTableViewController())
     
