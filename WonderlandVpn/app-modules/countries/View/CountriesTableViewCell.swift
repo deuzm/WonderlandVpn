@@ -22,7 +22,7 @@ class CountriesTableViewCell: UITableViewCell {
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 20, y: self.bounds.height/2 - 10, width: 25, height: 25)
         return imageView
-    }()
+    }() 
     
     lazy var countryLabel: UILabel = {
         let label = UILabel()
@@ -47,7 +47,7 @@ class CountriesTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = UIColor.Custom.Black
+//        contentView.backgroundColor = UIColor.Custom
         
         self.addSubview(imageView!)
     
@@ -56,6 +56,8 @@ class CountriesTableViewCell: UITableViewCell {
         layoutSubviews()
         
     }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -68,7 +70,9 @@ class CountriesTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        contentView.backgroundColor = UIColor.Custom.Black
+        
         // Configure the view for the selected state
     }
     

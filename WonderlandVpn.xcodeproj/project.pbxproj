@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		1DEDCA61264E7D3300E0B802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA60264E7D3300E0B802 /* AppDelegate.swift */; };
 		1DEDCA63264E7D3300E0B802 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA62264E7D3300E0B802 /* SceneDelegate.swift */; };
-		1DEDCA65264E7D3300E0B802 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA64264E7D3300E0B802 /* MainViewController.swift */; };
+		1DEDCA65264E7D3300E0B802 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA64264E7D3300E0B802 /* HomeViewController.swift */; };
 		1DEDCA6A264E7D3700E0B802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCA69264E7D3700E0B802 /* Assets.xcassets */; };
 		1DEDCA6D264E7D3700E0B802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCA6B264E7D3700E0B802 /* LaunchScreen.storyboard */; };
-		1DEDCA76264E7E2D00E0B802 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA75264E7E2D00E0B802 /* MainInteractor.swift */; };
+		1DEDCA76264E7E2D00E0B802 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */; };
 		1DEDCA79264E7E3600E0B802 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */; };
-		1DEDCA7C264E7E4500E0B802 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA7B264E7E4500E0B802 /* MainView.swift */; };
-		1DEDCA7F264E7E5F00E0B802 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA7E264E7E5F00E0B802 /* MainEntity.swift */; };
-		1DEDCA82264E7E6600E0B802 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA81264E7E6600E0B802 /* MainRouter.swift */; };
+		1DEDCA7C264E7E4500E0B802 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA7B264E7E4500E0B802 /* HomeView.swift */; };
+		1DEDCA82264E7E6600E0B802 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */; };
 		1DEDCA96264E802300E0B802 /* CountriesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA95264E802300E0B802 /* CountriesProtocols.swift */; };
 		1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA98264E802C00E0B802 /* CountriesInteractor.swift */; };
 		1DEDCA9C264E803300E0B802 /* CountriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA9B264E803300E0B802 /* CountriesRouter.swift */; };
 		1DEDCA9F264E804400E0B802 /* CountriesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA9E264E804400E0B802 /* CountriesEntity.swift */; };
 		1DEDCAA2264E804C00E0B802 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAA1264E804C00E0B802 /* CountriesPresenter.swift */; };
 		1DEDCAB4264E808900E0B802 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAB3264E808900E0B802 /* Protocols.swift */; };
-		1DEDCAB8264E808F00E0B802 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAB7264E808F00E0B802 /* Entity.swift */; };
 		1DEDCABB264E809500E0B802 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCABA264E809500E0B802 /* Interactor.swift */; };
 		1DEDCABE264E809D00E0B802 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCABD264E809D00E0B802 /* TabBarPresenter.swift */; };
 		1DEDCAC4264E80BB00E0B802 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAC3264E80BB00E0B802 /* Router.swift */; };
@@ -39,28 +37,28 @@
 		1DEDCB042651372800E0B802 /* CountryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */; };
 		1DEDCB0A26513EFC00E0B802 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0926513EFC00E0B802 /* DataManager.swift */; };
 		1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */; };
+		1DEDCB14265287C300E0B802 /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB13265287C300E0B802 /* MyFileManager.swift */; };
+		1DEDCB1C26528FF100E0B802 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DEDCA5D264E7D3300E0B802 /* WonderlandVpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WonderlandVpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEDCA60264E7D3300E0B802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DEDCA62264E7D3300E0B802 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DEDCA64264E7D3300E0B802 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1DEDCA64264E7D3300E0B802 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1DEDCA69264E7D3700E0B802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DEDCA6C264E7D3700E0B802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DEDCA6E264E7D3700E0B802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DEDCA75264E7E2D00E0B802 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		1DEDCA7B264E7E4500E0B802 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		1DEDCA7E264E7E5F00E0B802 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
-		1DEDCA81264E7E6600E0B802 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		1DEDCA7B264E7E4500E0B802 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		1DEDCA95264E802300E0B802 /* CountriesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesProtocols.swift; sourceTree = "<group>"; };
 		1DEDCA98264E802C00E0B802 /* CountriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInteractor.swift; sourceTree = "<group>"; };
 		1DEDCA9B264E803300E0B802 /* CountriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRouter.swift; sourceTree = "<group>"; };
 		1DEDCA9E264E804400E0B802 /* CountriesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEntity.swift; sourceTree = "<group>"; };
 		1DEDCAA1264E804C00E0B802 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
 		1DEDCAB3264E808900E0B802 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		1DEDCAB7264E808F00E0B802 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		1DEDCABA264E809500E0B802 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		1DEDCABD264E809D00E0B802 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		1DEDCAC3264E80BB00E0B802 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -76,6 +74,8 @@
 		1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1DEDCB0926513EFC00E0B802 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesConfigurator.swift; sourceTree = "<group>"; };
+		1DEDCB13265287C300E0B802 /* MyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
+		1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,6 @@
 				1DEDCA6E264E7D3700E0B802 /* Info.plist */,
 				1DEDCAF4264FCCCE00E0B802 /* app-utilities */,
 				1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */,
-				1DEDCB0926513EFC00E0B802 /* DataManager.swift */,
 			);
 			path = WonderlandVpn;
 			sourceTree = "<group>";
@@ -125,6 +124,9 @@
 		1DEDCA84264E7E7100E0B802 /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
+				1DEDCB0926513EFC00E0B802 /* DataManager.swift */,
+				1DEDCB13265287C300E0B802 /* MyFileManager.swift */,
+				1DEDCAAC264E807100E0B802 /* Entity */,
 				1DEDCA86264E7E8E00E0B802 /* home-screen */,
 				1DEDCA8B264E7ED200E0B802 /* tab-bar */,
 				1DEDCA8A264E7EAF00E0B802 /* countries */,
@@ -138,7 +140,6 @@
 				1DEDCA93264E7F5E00E0B802 /* Protocols */,
 				1DEDCA92264E7F5700E0B802 /* Interacor */,
 				1DEDCA8F264E7F0200E0B802 /* Router */,
-				1DEDCA8E264E7EF400E0B802 /* Entity */,
 				1DEDCA8D264E7EEB00E0B802 /* View */,
 				1DEDCA8C264E7EE300E0B802 /* Presenter */,
 			);
@@ -148,10 +149,10 @@
 		1DEDCA8A264E7EAF00E0B802 /* countries */ = {
 			isa = PBXGroup;
 			children = (
+				1DEDCB1826528FBB00E0B802 /* Configurator */,
 				1DEDCAA7264E806000E0B802 /* Protocols */,
 				1DEDCAA9264E806500E0B802 /* Interactor */,
 				1DEDCAAB264E806B00E0B802 /* Router */,
-				1DEDCAAC264E807100E0B802 /* Entity */,
 				1DEDCAAF264E807600E0B802 /* Presenter */,
 				1DEDCAB1264E807C00E0B802 /* View */,
 			);
@@ -161,8 +162,8 @@
 		1DEDCA8B264E7ED200E0B802 /* tab-bar */ = {
 			isa = PBXGroup;
 			children = (
+				1DEDCB1A26528FD000E0B802 /* Configurator */,
 				1DEDCACC264E815200E0B802 /* Protocols */,
-				1DEDCACE264E815D00E0B802 /* Entity */,
 				1DEDCACF264E816300E0B802 /* Interactor */,
 				1DEDCAD1264E816900E0B802 /* Presenter */,
 				1DEDCAD3264E816E00E0B802 /* View */,
@@ -182,24 +183,16 @@
 		1DEDCA8D264E7EEB00E0B802 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCA64264E7D3300E0B802 /* MainViewController.swift */,
-				1DEDCA7B264E7E4500E0B802 /* MainView.swift */,
+				1DEDCA64264E7D3300E0B802 /* HomeViewController.swift */,
+				1DEDCA7B264E7E4500E0B802 /* HomeView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1DEDCA8E264E7EF400E0B802 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1DEDCA7E264E7E5F00E0B802 /* MainEntity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		1DEDCA8F264E7F0200E0B802 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCA81264E7E6600E0B802 /* MainRouter.swift */,
+				1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -207,7 +200,7 @@
 		1DEDCA92264E7F5700E0B802 /* Interacor */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCA75264E7E2D00E0B802 /* MainInteractor.swift */,
+				1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */,
 			);
 			path = Interacor;
 			sourceTree = "<group>";
@@ -215,6 +208,7 @@
 		1DEDCA93264E7F5E00E0B802 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -239,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCA9B264E803300E0B802 /* CountriesRouter.swift */,
-				1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -277,14 +270,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		1DEDCACE264E815D00E0B802 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1DEDCAB7264E808F00E0B802 /* Entity.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		1DEDCACF264E816300E0B802 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCAC3264E80BB00E0B802 /* Router.swift */,
-				1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -351,6 +335,22 @@
 				1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */,
 			);
 			path = "app-utilities";
+			sourceTree = "<group>";
+		};
+		1DEDCB1826528FBB00E0B802 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		1DEDCB1A26528FD000E0B802 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,27 +424,27 @@
 			files = (
 				1DEDCB0A26513EFC00E0B802 /* DataManager.swift in Sources */,
 				1DEDCABE264E809D00E0B802 /* TabBarPresenter.swift in Sources */,
+				1DEDCB14265287C300E0B802 /* MyFileManager.swift in Sources */,
 				1DEDCAF8264FE03C00E0B802 /* NavigationController.swift in Sources */,
 				1DEDCAB4264E808900E0B802 /* Protocols.swift in Sources */,
 				1DEDCAEF264FC79F00E0B802 /* TabBarConfigurator.swift in Sources */,
 				1DEDCA9C264E803300E0B802 /* CountriesRouter.swift in Sources */,
 				1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */,
 				1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */,
-				1DEDCA82264E7E6600E0B802 /* MainRouter.swift in Sources */,
+				1DEDCA82264E7E6600E0B802 /* HomeRouter.swift in Sources */,
 				1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */,
-				1DEDCA65264E7D3300E0B802 /* MainViewController.swift in Sources */,
+				1DEDCA65264E7D3300E0B802 /* HomeViewController.swift in Sources */,
 				1DEDCB042651372800E0B802 /* CountryEntity+CoreDataProperties.swift in Sources */,
-				1DEDCAB8264E808F00E0B802 /* Entity.swift in Sources */,
 				1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */,
 				1DEDCA61264E7D3300E0B802 /* AppDelegate.swift in Sources */,
 				1DEDCAEB264EAF3A00E0B802 /* CountriesTableViewCell.swift in Sources */,
+				1DEDCB1C26528FF100E0B802 /* HomeProtocols.swift in Sources */,
 				1DEDCA96264E802300E0B802 /* CountriesProtocols.swift in Sources */,
-				1DEDCA7F264E7E5F00E0B802 /* MainEntity.swift in Sources */,
-				1DEDCA7C264E7E4500E0B802 /* MainView.swift in Sources */,
+				1DEDCA7C264E7E4500E0B802 /* HomeView.swift in Sources */,
 				1DEDCAC4264E80BB00E0B802 /* Router.swift in Sources */,
 				1DEDCA9F264E804400E0B802 /* CountriesEntity.swift in Sources */,
 				1DEDCB032651372800E0B802 /* CountryEntity+CoreDataClass.swift in Sources */,
-				1DEDCA76264E7E2D00E0B802 /* MainInteractor.swift in Sources */,
+				1DEDCA76264E7E2D00E0B802 /* HomeInteractor.swift in Sources */,
 				1DEDCABB264E809500E0B802 /* Interactor.swift in Sources */,
 				1DEDCAFF2651356B00E0B802 /* Country.xcdatamodeld in Sources */,
 				1DEDCAA2264E804C00E0B802 /* CountriesPresenter.swift in Sources */,

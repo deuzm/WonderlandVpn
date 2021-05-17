@@ -12,9 +12,14 @@ protocol CountriesConfiguratorProtocol {
     func configure(with controller: CountriesTableViewController)
 }
 
+protocol DataManagerProtocol {
+    func getCountries() -> [Country]
+    func findCountry(with name: String) -> Country?
+}
+
 //View -> Presenter
 protocol ViewToPresenterCountriesProtocol {
-    func updateData(data: [Countries])
+    func updateData(data: [Country])
     func setUpViews()
 }
 
@@ -25,18 +30,22 @@ protocol PresenterToViewCountriesProtocol {
     var interactor: PresenterToInteractorCountriesProtocol? { get set }
     var router: PresenterToRouterCountriesProtocol? { get set }
     
+    func didSelectCountry(with name: String)
     func startFetchingCountries()
 }
 
 // Presenter -> Interactor
 protocol PresenterToInteractorCountriesProtocol {
+    var currentCountry: Country? { get set }
     var presenter: InteractorToPresenterCountriesProtocol? { get set }
     func getCountries()
+    func saveSelectedCountry(with name: String)
 }
 
 // Interactor -> Presenter
 protocol InteractorToPresenterCountriesProtocol {
-     func fetchSucceed(with data: [Countries])
+    
+     func fetchSucceed(with data: [Country])
      func fetchFailed()
 }
 
@@ -44,7 +53,7 @@ protocol InteractorToPresenterCountriesProtocol {
 protocol PresenterToRouterCountriesProtocol {
     var view: CountriesTableViewController? { get set }
     static func createTabBarModule(with presenter: TabBarPresenter)
-    func returnToMainScene()
+    func returnToMainScene(with country: Country)
     
 }
 

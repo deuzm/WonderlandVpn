@@ -19,6 +19,11 @@ class CountriesPresenter: PresenterToViewCountriesProtocol {
         interactor?.getCountries()
     }
     
+    func didSelectCountry(with name: String) {
+        interactor?.saveSelectedCountry(with: name)
+        router?.returnToMainScene(with: (interactor?.currentCountry)!)
+    }
+    
     required init(view: ViewToPresenterCountriesProtocol) {
             self.view = view
     }
@@ -26,7 +31,7 @@ class CountriesPresenter: PresenterToViewCountriesProtocol {
 }
 
 extension CountriesPresenter: InteractorToPresenterCountriesProtocol {
-    func fetchSucceed(with data: [Countries]) {
+    func fetchSucceed(with data: [Country]) {
         view?.updateData(data: data)
     }
     func fetchFailed() {

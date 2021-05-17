@@ -12,7 +12,7 @@ class CountriesTableViewController: UITableViewController {
     // MARK: - Properties
     var presenter: PresenterToViewCountriesProtocol?
     var configurator: CountriesConfigurator!
-    var countries: [Countries] = []
+    var countries: [Country] = []
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -32,7 +32,13 @@ class CountriesTableViewController: UITableViewController {
 
 // MARK: - Table view data source
 extension CountriesTableViewController {
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as? CountriesTableViewCell
+    
+        presenter?.didSelectCountry(with: cell?.countryLabel.text ?? "")
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //call presenter to return number of rows
         return countries.count
@@ -40,8 +46,8 @@ extension CountriesTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountriesTableViewCell.identifier) as? CountriesTableViewCell
-        
-        var name =  countries[0].name
+    
+        let i = indexPath.row
         cell?.countryLabel.text = countries[indexPath.row].name
         cell?.imageString = countries[indexPath.row].image
         return cell!
@@ -59,9 +65,8 @@ extension CountriesTableViewController {
         return 1
     }
 }
-
 extension CountriesTableViewController: ViewToPresenterCountriesProtocol {
-    func updateData(data: [Countries]) {
+    func updateData(data: [Country]) {
         countries = data
         tableView.reloadData()
     }

@@ -7,11 +7,13 @@
 
 import Foundation
 
-class Countries {
+class Country: Codable {
     public var name: String
     public var image: String
-    public init(with name: String, imageName: String) {
+    public var id: UUID
+    public init(with name: String, imageName: String, id: UUID) {
         self.name = name
         self.image = imageName
+        self.id = id
     }
 }

@@ -8,7 +8,9 @@
 import Foundation
 import CoreData
 
-class DataManager {
+class DataManager: DataManagerProtocol {
+    
+    
     private static var persistentContainer: NSPersistentContainer = {
                let container = NSPersistentContainer(name: "Country")
                container.loadPersistentStores { description, error in
@@ -23,7 +25,7 @@ class DataManager {
         return Self.persistentContainer.viewContext
       }()
     
-    func saveContext () {
+    private func saveContext () {
           if context.hasChanges {
               do {
                   try context.save()
@@ -34,8 +36,11 @@ class DataManager {
               }
           }
       }
+    func delete() {
+        
+    }
     
-    func getCountries() -> [NSManagedObject]? {
+    private func fetchCountries() -> [NSManagedObject]? {
         let fetchRequest: NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
         let objects: [NSManagedObject]?
         do {
@@ -47,7 +52,49 @@ class DataManager {
         return objects
     }
     
-    func setCountry(countryName: String, imageName: String) {
+    func findCountry(with name: String) -> Country? {
+        print(name)
+        let fetchRequest: NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "country == %@", name)
+        fetchRequest.sortDescriptors =  [NSSortDescriptor(keyPath: \CountryEntity.country, ascending: true)]
+        fetchRequest.entity = CountryEntity.entity()
+        
+        var country: Country? = nil
+        let objects: [CountryEntity]
+        do {
+            let objects = try context.fetch(fetchRequest)
+            let countryObject = objects[0]
+            if countryObject.country != nil {
+                let name = (countryObject.country ?? "") as String
+                let image = (countryObject.imageString ?? "") as String
+                let id = (countryObject.id ?? UUID()) as UUID
+                country = Country(with: name, imageName: image, id: id)
+            }
+        } catch let error as NSError {
+            print(error)
+            country = nil
+        }
+        return country
+    }
+    
+    func getCountries() -> [Country] {
+        
+        guard let countries = fetchCountries()  else {
+           return []
+        }
+        var data: [Country] = []
+        for country in countries {
+            let name = country.value(forKey: "country") as? String ?? ""
+            let image = country.value(forKey: "imageString") as? String ?? ""
+            let id = country.value(forKey: "id") as? UUID
+            let object = Country(with: name, imageName: image, id: id!)
+            data.append(object)
+        }
+        return data
+    }
+    
+    
+    func addCountry(countryName: String, imageName: String) {
         let country = CountryEntity(context: context)
         country.country = countryName
         country.imageString = imageName
@@ -69,7 +116,7 @@ class DataManager {
             let countriesArray = countryNames.components(separatedBy: "\n")
             
             for (image, country) in zip(namesArray, countriesArray) {
-                setCountry(countryName: country, imageName: image)
+                addCountry(countryName: country, imageName: image)
             }
         }
         catch {/* error handling here */}

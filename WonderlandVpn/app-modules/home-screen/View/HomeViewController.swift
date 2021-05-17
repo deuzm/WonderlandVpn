@@ -9,6 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var currentCountry: Country?
+    
     lazy var connectionButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         button.layer.cornerRadius = 100
@@ -29,8 +31,14 @@ class MainViewController: UIViewController {
         return label
     }()
     
+    var imageName: String = "" {
+        didSet {
+            flagImage.image = UIImage(named: imageName)
+        }
+    }
+    
     lazy var flagImage: UIImageView = {
-        let image = UIImage(named: "001-paraguay.png")
+        let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 20, y: self.view.bounds.height/2 - 10, width: 25, height: 25)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +61,17 @@ class MainViewController: UIViewController {
         layoutSubviews()
         view.addSubview(UIView(frame: CGRect(x: 10, y: 10, width: 10, height: 10)))
         // Do any additional setup after loading the view.
+        
+        currentCountry = MyFileManager().readCurrentCountry()
+        imageName = currentCountry!.image
+        countryLabel.text = currentCountry?.name ?? ""
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        imageName = currentCountry!.image
+        countryLabel.text = currentCountry?.name ?? ""
+    }
+    
     func layoutSubviews() {
         NSLayoutConstraint.activate([
           //2
