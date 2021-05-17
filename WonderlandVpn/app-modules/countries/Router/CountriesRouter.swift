@@ -11,13 +11,11 @@ class CountriesRouter: PresenterToRouterCountriesProtocol {
 
     var view: CountriesTableViewController?
     
-    static func createTabBarModule(with presenter: TabBarPresenter) {
-        
-    }
     func returnToMainScene(with country: Country) {
         let parentView = view?.tabBarController as! TabBarController
         parentView.mainVC.currentCountry = country
         parentView.mainVC.stateString = "Connect"
+        parentView.mainVC.presenter?.interactor?.state = "inactive"
         parentView.selectedIndex = 0
         
     }

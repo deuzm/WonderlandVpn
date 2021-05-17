@@ -34,7 +34,4 @@ extension CountriesPresenter: InteractorToPresenterCountriesProtocol {
     func fetchSucceed(with data: [Country]) {
         view?.updateData(data: data)
     }
-    func fetchFailed() {
-        //TODO
-    }
 }

@@ -19,6 +19,8 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
+//        DataManager().deleteAllData()
+        DataManager().addCountriesFromFile()
     }
     
     override func viewWillAppear(_ animated: Bool) {

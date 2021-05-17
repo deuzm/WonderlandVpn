@@ -13,7 +13,7 @@
 		1DEDCA6A264E7D3700E0B802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCA69264E7D3700E0B802 /* Assets.xcassets */; };
 		1DEDCA6D264E7D3700E0B802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCA6B264E7D3700E0B802 /* LaunchScreen.storyboard */; };
 		1DEDCA76264E7E2D00E0B802 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */; };
-		1DEDCA79264E7E3600E0B802 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */; };
+		1DEDCA79264E7E3600E0B802 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA78264E7E3600E0B802 /* HomePresenter.swift */; };
 		1DEDCA82264E7E6600E0B802 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */; };
 		1DEDCA96264E802300E0B802 /* CountriesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA95264E802300E0B802 /* CountriesProtocols.swift */; };
 		1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCA98264E802C00E0B802 /* CountriesInteractor.swift */; };
@@ -30,15 +30,16 @@
 		1DEDCAEF264FC79F00E0B802 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */; };
 		1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */; };
 		1DEDCAF8264FE03C00E0B802 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */; };
-		1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */; };
 		1DEDCAFF2651356B00E0B802 /* Country.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */; };
-		1DEDCB032651372800E0B802 /* CountryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB012651372800E0B802 /* CountryEntity+CoreDataClass.swift */; };
-		1DEDCB042651372800E0B802 /* CountryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */; };
+		1DEDCB032651372800E0B802 /* CountryEntityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB012651372800E0B802 /* CountryEntityClass.swift */; };
+		1DEDCB042651372800E0B802 /* CountryEntityProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB022651372800E0B802 /* CountryEntityProperties.swift */; };
 		1DEDCB0A26513EFC00E0B802 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0926513EFC00E0B802 /* DataManager.swift */; };
 		1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */; };
 		1DEDCB14265287C300E0B802 /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB13265287C300E0B802 /* MyFileManager.swift */; };
 		1DEDCB1C26528FF100E0B802 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */; };
 		1DEDCB222652955E00E0B802 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDCB212652955E00E0B802 /* HomeConfigurator.swift */; };
+		1DEDCB372652FB8800E0B802 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCB352652FB8800E0B802 /* countries.txt */; };
+		1DEDCB382652FB8800E0B802 /* imageNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DEDCB362652FB8800E0B802 /* imageNames.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +51,7 @@
 		1DEDCA6C264E7D3700E0B802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DEDCA6E264E7D3700E0B802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEDCA75264E7E2D00E0B802 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		1DEDCA78264E7E3600E0B802 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1DEDCA81264E7E6600E0B802 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		1DEDCA95264E802300E0B802 /* CountriesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesProtocols.swift; sourceTree = "<group>"; };
 		1DEDCA98264E802C00E0B802 /* CountriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInteractor.swift; sourceTree = "<group>"; };
@@ -67,15 +68,16 @@
 		1DEDCAEE264FC79F00E0B802 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
 		1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1DEDCAF7264FE03B00E0B802 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
 		1DEDCAFE2651356B00E0B802 /* Country.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Country.xcdatamodel; sourceTree = "<group>"; };
-		1DEDCB012651372800E0B802 /* CountryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1DEDCB012651372800E0B802 /* CountryEntityClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEntityClass.swift; sourceTree = "<group>"; };
+		1DEDCB022651372800E0B802 /* CountryEntityProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEntityProperties.swift; sourceTree = "<group>"; };
 		1DEDCB0926513EFC00E0B802 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1DEDCB0C26519A4500E0B802 /* CountriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesConfigurator.swift; sourceTree = "<group>"; };
 		1DEDCB13265287C300E0B802 /* MyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
 		1DEDCB1B26528FF100E0B802 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		1DEDCB212652955E00E0B802 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		1DEDCB352652FB8800E0B802 /* countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
+		1DEDCB362652FB8800E0B802 /* imageNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = imageNames.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,15 +110,16 @@
 		1DEDCA5F264E7D3300E0B802 /* WonderlandVpn */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCB012651372800E0B802 /* CountryEntity+CoreDataClass.swift */,
-				1DEDCB022651372800E0B802 /* CountryEntity+CoreDataProperties.swift */,
+				1DEDCB342652FB8800E0B802 /* CountryDataSourceFIles */,
+				1DEDCB2826529E5B00E0B802 /* app-services */,
+				1DEDCAAC264E807100E0B802 /* app-entity */,
+				1DEDCB2C2652F68900E0B802 /* app-coredata */,
 				1DEDCA84264E7E7100E0B802 /* app-modules */,
 				1DEDCAD6264E81B300E0B802 /* app-settings */,
 				1DEDCADA264E81E000E0B802 /* app-ui */,
 				1DEDCADB264E820A00E0B802 /* app-icons */,
 				1DEDCA6E264E7D3700E0B802 /* Info.plist */,
 				1DEDCAF4264FCCCE00E0B802 /* app-utilities */,
-				1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */,
 			);
 			path = WonderlandVpn;
 			sourceTree = "<group>";
@@ -124,8 +127,6 @@
 		1DEDCA84264E7E7100E0B802 /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCB2826529E5B00E0B802 /* Services */,
-				1DEDCAAC264E807100E0B802 /* Entity */,
 				1DEDCA86264E7E8E00E0B802 /* home-screen */,
 				1DEDCA8B264E7ED200E0B802 /* tab-bar */,
 				1DEDCA8A264E7EAF00E0B802 /* countries */,
@@ -175,7 +176,7 @@
 		1DEDCA8C264E7EE300E0B802 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				1DEDCA78264E7E3600E0B802 /* MainPresenter.swift */,
+				1DEDCA78264E7E3600E0B802 /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -236,12 +237,12 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		1DEDCAAC264E807100E0B802 /* Entity */ = {
+		1DEDCAAC264E807100E0B802 /* app-entity */ = {
 			isa = PBXGroup;
 			children = (
 				1DEDCA9E264E804400E0B802 /* CountriesEntity.swift */,
 			);
-			path = Entity;
+			path = "app-entity";
 			sourceTree = "<group>";
 		};
 		1DEDCAAF264E807600E0B802 /* Presenter */ = {
@@ -331,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				1DEDCAF1264FCCC900E0B802 /* UIColorExtension.swift */,
-				1DEDCAFA265049F600E0B802 /* LayoutExtensions.swift */,
 			);
 			path = "app-utilities";
 			sourceTree = "<group>";
@@ -360,13 +360,32 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		1DEDCB2826529E5B00E0B802 /* Services */ = {
+		1DEDCB2826529E5B00E0B802 /* app-services */ = {
 			isa = PBXGroup;
 			children = (
 				1DEDCB0926513EFC00E0B802 /* DataManager.swift */,
 				1DEDCB13265287C300E0B802 /* MyFileManager.swift */,
 			);
-			path = Services;
+			path = "app-services";
+			sourceTree = "<group>";
+		};
+		1DEDCB2C2652F68900E0B802 /* app-coredata */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCAFD2651356B00E0B802 /* Country.xcdatamodeld */,
+				1DEDCB012651372800E0B802 /* CountryEntityClass.swift */,
+				1DEDCB022651372800E0B802 /* CountryEntityProperties.swift */,
+			);
+			path = "app-coredata";
+			sourceTree = "<group>";
+		};
+		1DEDCB342652FB8800E0B802 /* CountryDataSourceFIles */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDCB352652FB8800E0B802 /* countries.txt */,
+				1DEDCB362652FB8800E0B802 /* imageNames.txt */,
+			);
+			path = CountryDataSourceFIles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,8 +445,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEDCB372652FB8800E0B802 /* countries.txt in Resources */,
 				1DEDCA6D264E7D3700E0B802 /* LaunchScreen.storyboard in Resources */,
 				1DEDCA6A264E7D3700E0B802 /* Assets.xcassets in Resources */,
+				1DEDCB382652FB8800E0B802 /* imageNames.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,9 +469,8 @@
 				1DEDCAF2264FCCC900E0B802 /* UIColorExtension.swift in Sources */,
 				1DEDCB0D26519A4500E0B802 /* CountriesConfigurator.swift in Sources */,
 				1DEDCA82264E7E6600E0B802 /* HomeRouter.swift in Sources */,
-				1DEDCAFB265049F600E0B802 /* LayoutExtensions.swift in Sources */,
 				1DEDCA65264E7D3300E0B802 /* HomeViewController.swift in Sources */,
-				1DEDCB042651372800E0B802 /* CountryEntity+CoreDataProperties.swift in Sources */,
+				1DEDCB042651372800E0B802 /* CountryEntityProperties.swift in Sources */,
 				1DEDCA99264E802C00E0B802 /* CountriesInteractor.swift in Sources */,
 				1DEDCA61264E7D3300E0B802 /* AppDelegate.swift in Sources */,
 				1DEDCAEB264EAF3A00E0B802 /* CountriesTableViewCell.swift in Sources */,
@@ -459,7 +479,7 @@
 				1DEDCAC4264E80BB00E0B802 /* Router.swift in Sources */,
 				1DEDCB222652955E00E0B802 /* HomeConfigurator.swift in Sources */,
 				1DEDCA9F264E804400E0B802 /* CountriesEntity.swift in Sources */,
-				1DEDCB032651372800E0B802 /* CountryEntity+CoreDataClass.swift in Sources */,
+				1DEDCB032651372800E0B802 /* CountryEntityClass.swift in Sources */,
 				1DEDCA76264E7E2D00E0B802 /* HomeInteractor.swift in Sources */,
 				1DEDCABB264E809500E0B802 /* Interactor.swift in Sources */,
 				1DEDCAFF2651356B00E0B802 /* Country.xcdatamodeld in Sources */,
@@ -467,7 +487,7 @@
 				1DEDCA63264E7D3300E0B802 /* SceneDelegate.swift in Sources */,
 				1DEDCAE0264E8D2400E0B802 /* TabBarController.swift in Sources */,
 				1DEDCAE5264E8D5700E0B802 /* CountriesTableViewController.swift in Sources */,
-				1DEDCA79264E7E3600E0B802 /* MainPresenter.swift in Sources */,
+				1DEDCA79264E7E3600E0B802 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = WonderlandVpn/CountryDataSourceFIles;
 				DEVELOPMENT_TEAM = UNADQ24S97;
 				INFOPLIST_FILE = WonderlandVpn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -626,6 +647,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = WonderlandVpn/CountryDataSourceFIles;
 				DEVELOPMENT_TEAM = UNADQ24S97;
 				INFOPLIST_FILE = WonderlandVpn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

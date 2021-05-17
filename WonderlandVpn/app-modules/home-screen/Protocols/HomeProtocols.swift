@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import UIKit
 
 protocol HomeConfiguratorProtocol {
@@ -15,7 +14,6 @@ protocol HomeConfiguratorProtocol {
 
 //View -> Presenter
 protocol HomeViewToPresenterProtocol {
-    func setUpViews()
     func setCountryUI(with data: Country)
     func startPulsingAnimation()
     func stopPulsingAnimation()
@@ -29,7 +27,6 @@ protocol HomePresenterToViewProtocol {
     var interactor: HomePresenterToInteractorProtocol? { get set }
     var router: HomePresenterToRouterProtocol? { get set }
     func startFetchingCurrentCountry()
-    func viewWillAppear()
     func startConnectingToVPN()
     func refreshState()
 }
@@ -46,7 +43,6 @@ protocol HomePresenterToInteractorProtocol {
 // Interactor -> Presenter
 protocol HomeInteractorToPresenterProtocol {
     func fetchSucceed(with data: Country)
-    func fetchFailed()
     func connectionCompleted()
 }
 

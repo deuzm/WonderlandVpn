@@ -20,12 +20,8 @@ class HomePresenter: HomePresenterToViewProtocol {
         interactor?.connectToVPN()
     }
     
-    func viewWillAppear() {
-//        view?.setCountryUI(with: (interactor?.currentCountry)!)
-    }
-    
     func refreshState() {
-        var state = interactor?.state
+        let state = interactor?.state
         if(state == "inactive") {
             view?.resetAnimation()
         }
@@ -49,10 +45,6 @@ class HomePresenter: HomePresenterToViewProtocol {
 extension HomePresenter: HomeInteractorToPresenterProtocol {
     func fetchSucceed(with data: Country) {
         view?.setCountryUI(with: data)
-    }
-    
-    func fetchFailed() {
-        
     }
     
     func connectionCompleted() {

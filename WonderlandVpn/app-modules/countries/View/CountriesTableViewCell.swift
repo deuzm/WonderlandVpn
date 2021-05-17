@@ -26,7 +26,6 @@ class CountriesTableViewCell: UITableViewCell {
     
     lazy var countryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Butoma hui"
         label.textColor = UIColor.white
         label.font = .systemFont(ofSize: 14)
         label.frame = CGRect(x: 20, y: 10, width: self.bounds.width - 100, height: 20)
@@ -37,7 +36,6 @@ class CountriesTableViewCell: UITableViewCell {
         let view = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: self.bounds.width - 40, height: self.bounds.height - 15))
         view.backgroundColor = UIColor.Custom.DarkGrey
         view.layer.cornerRadius = 24
-//        view.layer.borderWidth = 1
         view.backgroundColor = UIColor.Custom.DarkGrey
         view.addSubview(countryLabel)
         view.addSubview(flagImage)
@@ -46,8 +44,6 @@ class CountriesTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-//        contentView.backgroundColor = UIColor.Custom
         
         self.addSubview(imageView!)
     

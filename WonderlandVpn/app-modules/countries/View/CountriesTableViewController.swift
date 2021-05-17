@@ -47,7 +47,6 @@ extension CountriesTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountriesTableViewCell.identifier) as? CountriesTableViewCell
     
-        let i = indexPath.row
         cell?.countryLabel.text = countries[indexPath.row].name
         cell?.imageString = countries[indexPath.row].image
         return cell!
@@ -69,9 +68,5 @@ extension CountriesTableViewController: ViewToPresenterCountriesProtocol {
     func updateData(data: [Country]) {
         countries = data
         tableView.reloadData()
-    }
-    
-    func setUpViews() {
-        
     }
 }

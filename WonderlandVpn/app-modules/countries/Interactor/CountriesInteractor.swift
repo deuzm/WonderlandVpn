@@ -19,11 +19,7 @@ class CountriesInteractor: PresenterToInteractorCountriesProtocol {
             data.removeAll(where: { it in
                 return it.name == ""
             })
-            
             self.presenter?.fetchSucceed(with: data)
-            
-//                self.presenter?.fetchFailed()
-            
         }
     }
     
@@ -33,8 +29,6 @@ class CountriesInteractor: PresenterToInteractorCountriesProtocol {
             let manager = MyFileManager()
             self.currentCountry = country
             manager.writeCurrentCountry(country)
-        } else {
-            print("YOU SCUMBAG")
         }
         
     }

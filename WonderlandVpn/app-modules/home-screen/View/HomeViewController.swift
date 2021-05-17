@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    //MARK:- Properties
+    
     var currentCountry: Country?
     var presenter: HomePresenterToViewProtocol?
     var configurator: HomeConfiguratorProtocol!
@@ -23,6 +25,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    //MARK: - subviews
     lazy var connectionButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         button.layer.cornerRadius = 100
@@ -69,35 +72,17 @@ class HomeViewController: UIViewController {
         return view
     }()
     
+    //MARK:- functions
     func setUpNontificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    @objc private func handleEnterForeground() {
-        presenter?.refreshState()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configurator = HomeConfigurator()
-        configurator.configure(with: self)
-        
-        setUpNontificationObservers()
-        setUpPulsatingLayer()
-        setUpViews()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        presenter?.refreshState()
-        presenter?.startFetchingCurrentCountry()
-    }
     
     func setUpPulsatingLayer() {
         pulsingView = LayerContainerView()
         
         pulsingView.backgroundColor = UIColor.red
-        var layer = pulsingView.layer as! CAShapeLayer
+        let layer = pulsingView.layer as! CAShapeLayer
         let circularPath = UIBezierPath(arcCenter: pulsingView.center, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         layer.path = circularPath.cgPath
         layer.fillColor = UIColor.Custom.VioletGlowColor.cgColor
@@ -115,57 +100,10 @@ class HomeViewController: UIViewController {
         animation.repeatCount = Float.infinity
         animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         pulsingView.layer.add(self.animation!, forKey: "pulsing")
-//        pulsatingLayer.add(self.animation!, forKey: "pulsing")
     }
-    
-    func layoutSubviews() {
-
-        connectionButton.layer.position = view.center
-        titleView.layer.position = view.center
-       
-        NSLayoutConstraint.activate([
-          //2
-          connectionButton.centerXAnchor.constraint(equalTo: pulsingView.centerXAnchor),
-            connectionButton.centerYAnchor.constraint(equalTo: pulsingView.centerYAnchor),
-          //3
-            connectionButton.widthAnchor.constraint(equalToConstant: 200),
-            connectionButton.heightAnchor.constraint(equalToConstant: 200)
-        ])
-        NSLayoutConstraint.activate([
-          //2
-            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10),
-            titleView.bottomAnchor.constraint(equalTo: connectionButton.topAnchor, constant: -20),
-          //3
-            titleView.widthAnchor.constraint(equalToConstant: 100),
-            titleView.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        NSLayoutConstraint.activate([
-          //2
-            countryLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 40),
-          //3
-            
-            countryLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
-            countryLabel.widthAnchor.constraint(equalToConstant: 150),
-            countryLabel.heightAnchor.constraint(equalToConstant: 60),
-//            countryLabel.bottomAnchor.constraint(equalTo: connectionButton.topAnchor, constant: -20)
-            
-        ])
-        NSLayoutConstraint.activate([
-          //2
-            flagImage.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
-          //3
-            flagImage.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
-            flagImage.widthAnchor.constraint(equalToConstant: 20),
-            flagImage.heightAnchor.constraint(equalToConstant: 20),
-//            flagImage.bottomAnchor.constraint(equalTo: connectionButton.topAnchor, constant: -20)
-            
-        ])
- 
+    @objc private func handleEnterForeground() {
+        presenter?.refreshState()
     }
-}
-
-extension HomeViewController: HomeViewToPresenterProtocol {
     
     func setUpViews() {
         view.backgroundColor = UIColor.Custom.Black
@@ -174,6 +112,67 @@ extension HomeViewController: HomeViewToPresenterProtocol {
         layoutSubviews()
         view.addSubview(UIView(frame: CGRect(x: 10, y: 10, width: 10, height: 10)))
     }
+    
+    //MARK: - viewController lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator = HomeConfigurator()
+        configurator.configure(with: self)
+        
+        setUpNontificationObservers()
+        setUpPulsatingLayer()
+        setUpViews()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.refreshState()
+        presenter?.startFetchingCurrentCountry()
+    }
+    
+    //MARK: - Subviews layout
+    func layoutSubviews() {
+
+        connectionButton.layer.position = view.center
+        titleView.layer.position = view.center
+       
+        NSLayoutConstraint.activate([
+            
+          connectionButton.centerXAnchor.constraint(equalTo: pulsingView.centerXAnchor),
+            connectionButton.centerYAnchor.constraint(equalTo: pulsingView.centerYAnchor),
+            connectionButton.widthAnchor.constraint(equalToConstant: 200),
+            connectionButton.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        NSLayoutConstraint.activate([
+            
+            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10),
+            titleView.bottomAnchor.constraint(equalTo: connectionButton.topAnchor, constant: -20),
+            titleView.widthAnchor.constraint(equalToConstant: 100),
+            titleView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
+            
+            countryLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 40),
+            countryLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
+            countryLabel.widthAnchor.constraint(equalToConstant: 150),
+            countryLabel.heightAnchor.constraint(equalToConstant: 60)
+            
+        ])
+        NSLayoutConstraint.activate([
+            
+            flagImage.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            flagImage.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
+            flagImage.widthAnchor.constraint(equalToConstant: 20),
+            flagImage.heightAnchor.constraint(equalToConstant: 20)
+            
+        ])
+ 
+    }
+}
+
+//MARK: - Presenter callback functions
+extension HomeViewController: HomeViewToPresenterProtocol {
     
     func setCountryUI(with data: Country) {
         imageName = data.image
@@ -193,7 +192,6 @@ extension HomeViewController: HomeViewToPresenterProtocol {
             isAnimationRunning = false
         }
         pulsingView.layer.removeAllAnimations()
-//        pulsatingLayer.removeAllAnimations()
         stateString = "Completed!"
     }
     
@@ -201,7 +199,6 @@ extension HomeViewController: HomeViewToPresenterProtocol {
         isAnimationRunning = false
         stateString = "Connect"
         pulsingView.layer.removeAllAnimations()
-//        pulsatingLayer.removeAllAnimations()
     }
 }
 

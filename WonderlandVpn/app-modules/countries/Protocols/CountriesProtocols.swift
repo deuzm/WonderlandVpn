@@ -20,7 +20,6 @@ protocol DataManagerProtocol {
 //View -> Presenter
 protocol ViewToPresenterCountriesProtocol {
     func updateData(data: [Country])
-    func setUpViews()
 }
 
 // Presenter -> View
@@ -46,13 +45,11 @@ protocol PresenterToInteractorCountriesProtocol {
 protocol InteractorToPresenterCountriesProtocol {
     
      func fetchSucceed(with data: [Country])
-     func fetchFailed()
 }
 
 // Presenter -> Router
 protocol PresenterToRouterCountriesProtocol {
     var view: CountriesTableViewController? { get set }
-    static func createTabBarModule(with presenter: TabBarPresenter)
     func returnToMainScene(with country: Country)
     
 }

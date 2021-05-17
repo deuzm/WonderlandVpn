@@ -99,15 +99,23 @@ class DataManager: DataManagerProtocol {
         country.country = countryName
         country.imageString = imageName
         country.id = UUID()
+        
         saveContext()
     }
     
     func addCountriesFromFile() {
-        
-        let countryFilePath =  "/Users/lizamalinovskaa/Documents/Projects_for_work/WonderlandVpn/WonderlandVpn/CountryDataSourceFIles/countries.txt"
-        let imagesFilePath =   "/Users/lizamalinovskaa/Documents/Projects_for_work/WonderlandVpn/WonderlandVpn/CountryDataSourceFIles/imageNames.txt"
-        
+        var countryFilePath = ""
+        var imagesFilePath = ""
+    let paths = Bundle.main.paths(forResourcesOfType: "txt", inDirectory: nil)
+        for path in paths {
+            if path.contains("countries") {
+                countryFilePath = path
+            } else {
+                imagesFilePath = path
+            }
+        }
         //reading
+        let loadedCountries = getCountries()
         do {
             let fileNames = try String(contentsOfFile: imagesFilePath)
             let countryNames = try String(contentsOfFile: countryFilePath)
@@ -115,12 +123,29 @@ class DataManager: DataManagerProtocol {
             let namesArray = fileNames.components(separatedBy: "\n")
             let countriesArray = countryNames.components(separatedBy: "\n")
             
-            for (image, country) in zip(namesArray, countriesArray) {
-                addCountry(countryName: country, imageName: image)
+            for (name, country) in zip(namesArray, countriesArray) {
+                if loadedCountries.contains(where: { obj in obj.name == name }) {
+                    addCountry(countryName: country, imageName: name)
+                }
             }
+            
         }
         catch {/* error handling here */}
         
         
+    }
+    
+    func deleteAllData() {
+        let fetchRequest: NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                context.delete(objectData)
+            }
+        } catch let error {
+            print("Detele all data in \(Country.self) error :", error)
+        }
     }
 }

@@ -29,8 +29,11 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         }
         state = "connecting"
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
-            self.state = "connected"
-            self.presenter?.connectionCompleted()
+            if self.state == "connecting" {
+                self.state = "connected"
+            
+                self.presenter?.connectionCompleted()
+            }
         }
     }
     
