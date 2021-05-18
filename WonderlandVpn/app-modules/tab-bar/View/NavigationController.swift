@@ -34,7 +34,6 @@ class NavigationController: UINavigationController {
         navigationBar.barTintColor = UIColor.Custom.Black
         navigationBar.isTranslucent = false
         navigationBar.addSubview(headerBox)
-        // Do any additional setup after loading the view.
     }
     
     

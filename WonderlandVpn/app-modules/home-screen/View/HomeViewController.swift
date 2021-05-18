@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    //MARK: - subviews
+    //MARK: - Subviews
     lazy var connectionButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         button.layer.cornerRadius = 100
@@ -199,24 +199,5 @@ extension HomeViewController: HomeViewToPresenterProtocol {
         isAnimationRunning = false
         stateString = "Connect"
         pulsingView.layer.removeAllAnimations()
-    }
-}
-
-
-class LayerContainerView: UIView {
-
-    override public class var layerClass: Swift.AnyClass {
-        return CAShapeLayer.self
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        guard let shapeLayer = self.layer as? CAShapeLayer else { return }
-        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.green.cgColor
-        shapeLayer.fillColor = UIColor.green.cgColor
-        shapeLayer.lineCap = CAShapeLayerLineCap(rawValue: "round")
     }
 }

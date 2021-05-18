@@ -13,13 +13,8 @@ class TabBarController: UITabBarController {
     let countriesVC = CountriesTableViewController()
     let navVC = NavigationController(rootViewController: CountriesTableViewController())
     
-    var presenter: PresenterToViewProtocol!
-    var configurator = TabBarConfigurator()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(with: self)
-//        DataManager().deleteAllData()
         DataManager().addCountriesFromFile()
     }
     
@@ -29,7 +24,7 @@ class TabBarController: UITabBarController {
     
 }
 
-extension TabBarController: ViewToPresenterProtocol {
+extension TabBarController {
     
     func setUpViews() {
         
@@ -50,10 +45,6 @@ extension TabBarController: ViewToPresenterProtocol {
         
         setViewControllers(self.viewControllers, animated: false)
         selectedViewController = mainVC
-        
-        
-        
-        
     }
 
 }

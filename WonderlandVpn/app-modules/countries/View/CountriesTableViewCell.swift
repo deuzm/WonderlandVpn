@@ -9,8 +9,10 @@ import UIKit
 
 class CountriesTableViewCell: UITableViewCell {
     
+    //MARK: - properties
     static let identifier = "CountriesCell"
     
+    //MARK: - subviews
     var imageString: String = " " {
         didSet {
             flagImage.image = UIImage(named: imageString)
@@ -41,6 +43,7 @@ class CountriesTableViewCell: UITableViewCell {
         view.addSubview(flagImage)
         return view
     }()
+    //MARK: - view lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,15 +56,12 @@ class CountriesTableViewCell: UITableViewCell {
         
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -69,13 +69,13 @@ class CountriesTableViewCell: UITableViewCell {
         
         contentView.backgroundColor = UIColor.Custom.Black
         
-        // Configure the view for the selected state
     }
+    
+    // MARK: - Layout subviews
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let labelY = 7.5
         innerBox.frame = CGRect(x: 15, y: 6, width: self.bounds.width - 30, height: self.bounds.height - 12)
         imageView?.frame = CGRect(x: innerBox.bounds.minX + 10, y: 5, width: 10, height: 10)
         let labelX = 20.0 + (imageView?.bounds.width ?? 0) + 30.0;

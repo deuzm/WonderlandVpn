@@ -36,9 +36,6 @@ class DataManager: DataManagerProtocol {
               }
           }
       }
-    func delete() {
-        
-    }
     
     private func fetchCountries() -> [NSManagedObject]? {
         let fetchRequest: NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
@@ -60,7 +57,6 @@ class DataManager: DataManagerProtocol {
         fetchRequest.entity = CountryEntity.entity()
         
         var country: Country? = nil
-        let objects: [CountryEntity]
         do {
             let objects = try context.fetch(fetchRequest)
             let countryObject = objects[0]
@@ -130,7 +126,9 @@ class DataManager: DataManagerProtocol {
             }
             
         }
-        catch {/* error handling here */}
+        catch {
+            print(error)
+        }
         
         
     }
@@ -141,7 +139,7 @@ class DataManager: DataManagerProtocol {
         do {
             let results = try context.fetch(fetchRequest)
             for object in results {
-                guard let objectData = object as? NSManagedObject else {continue}
+                guard let objectData = object as? NSManagedObject else { continue }
                 context.delete(objectData)
             }
         } catch let error {
