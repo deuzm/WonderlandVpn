@@ -38,7 +38,7 @@
 038-republic of macedonia.png
 039-sahrawi arab democratic republic.png
 040-sudan.png
-041-uzbekistán.png
+041-uzbekistan.png
 042-yemen.png
 043-liberia.png
 044-russia.png
